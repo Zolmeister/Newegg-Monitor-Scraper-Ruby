@@ -1,0 +1,50 @@
+newegg monitor checker bot
+
+summary:
+This ruby script is used to find users the best deals on monitors on newegg, and alert them as soon as the deal appears.
+steps:
+1.install
+2.setup search.txt
+3. wait for that deal you always wanted to show up
+
+note: these deals are only the best deals (sometimes ~50% off) and come from the newegg open box monitor selection. if you can find a good deal on the website currently, this bot will not be so useful, however if you dont see a good enough deal for you, this bot will make sure you know about the deal when(or if) it arises
+
+---------------------------
+install:
+	dependencies:
+		ruby 1.8
+		pony (email handler)
+		gems
+		nokogiri
+	useful commands:
+sudo apt-get install ruby
+sudo apt-get install rubygems
+sudo gem install pony
+sudo gem install nokogiri
+-------------------------------
+cron job (this is what makes the script run constantly) (command: crontab -e)
+20 * * * * ruby /directory/newegg.rb
+-------------------------------
+search.txt setup:
+	all of the monitor properties are required, and should folow the defaults (examples included)
+-----------------------------
+email setup
+uncomment:
+#Pony.mail(:to => '#{@mon.email}', :via => :smtp, :via_options => {
+#:address => 'smtp.gmail.com',
+#:port => '587',
+#:enable_starttls_auto => true,
+#:user_name => 'id_gmail',
+#:password => 'parola_gmail',
+#:authentication => :plain, # :plain, :login, :cram_md5, no auth by default
+#:domain => "HELO", # don't know exactly what should be here
+#
+#},
+#:subject => 'newegg bot has found something', :body => 'http://www.newegg.com/Product/Product.aspx?Item=#{numm}')
+
+and replace id_gmail with your gmail login
+and parola_gmail with your gmail password
+
+this will allow the script to write emails to update you
+
+

@@ -1,0 +1,13 @@
+monitor
+resolution:1680 x 1050:>=
+price:120.00:<=
+size:22:>=
+email:pirateninja11@gmail.com:email
+end
+monitor
+resolution:1920 x 1080:>=
+price:150:<=
+size:23:>=
+email:pirateninja11@gmail.com:email
+end
+
